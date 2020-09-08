@@ -1,0 +1,71 @@
+h1{
+    font-family: 'Lobster', cursive;
+}
+
+.button-klasse{
+    color: black;
+    background-color: darkorange;
+    padding: 25px;
+    font-family: Chalkboard, fantasy;
+    font-size: 16pt;
+    border-color: darkorange;
+    border-radius: 25px;
+}
+.container-button{
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.container{
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    font-family: Chalkboard, fantasy;
+    color: ghostwhite;
+    font-size: 42pt;
+}
+.dobbelsteen {
+    height: 150px;
+    width: 150px;
+    max-width: 150px;
+    max-height: 150px;
+    border-color: black;
+    border-width: 8px;
+    border-style: solid;
+    border-radius: 30px;
+    align-content: center;
+    vertical-align: center;
+    background-color: ghostwhite;
+    margin: 20px;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12),
+    inset 10px 10px 54px -1px rgba(82, 88, 88, 0.82);
+    /*inset 10px 10px 54px -1px rgba(39, 46, 46, 0.82);*/
+}
+
+.dobbelsteen-vast {
+    max-width: 150px;
+    max-height: 150px;
+    border-radius: 30px;
+    align-content: center;
+    vertical-align: center;
+    margin: 20px;
+    box-shadow: 0 2.8px 2.2px rgba(255, 255, 255, 0.034),
+    0 6.7px 5.3px rgba(255, 255, 255, 0.048),
+    0 12.5px 10px rgba(255, 255, 255, 0.06),
+    0 22.3px 17.9px rgba(255, 255, 255, 0.072),
+    0 41.8px 33.4px rgba(255, 255, 255, 0.086),
+    0 100px 80px rgba(255, 255, 255, 0.12),
+    inset 10px 10px 54px -1px rgba(255, 255, 255, 0.82);
+}
+
+
+
