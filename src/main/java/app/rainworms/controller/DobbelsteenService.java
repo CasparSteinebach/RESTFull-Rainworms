@@ -35,21 +35,31 @@ public class DobbelsteenService {
         Dobbelsteen dobbelsteen = getDobbelsteenById(id);
 
         if (dobbelsteen.getStatusSteen().equals("open")) {
-            System.out.println(dobbelsteen.getStatusSteen());
             dobbelsteen.setStatusSteen("vast");
-        } else if (dobbelsteen.getStatusSteen().equals("vast")) {
             System.out.println(dobbelsteen.getStatusSteen());
+        } else if (dobbelsteen.getStatusSteen().equals("vast")) {
             dobbelsteen.setStatusSteen("open");
+            System.out.println(dobbelsteen.getStatusSteen());
         }
         return dobbelsteen;
     }
 
     public Dobbelsteen setWorp(long id) {
         Dobbelsteen dobbelsteen = getDobbelsteenById(id);
-        dobbelsteen.setWorp();
-        System.out.println("gegooid: " + dobbelsteen.getWorp());
-        return dobbelsteen;
+        if (dobbelsteen.getStatusSteen().equals("open")) {
+        	dobbelsteen.setWorp();
+            System.out.println("gegooid: " + dobbelsteen.getWorp());
+            return dobbelsteen;
+        } else return dobbelsteen;
+       
     }
+    
+    public Dobbelsteen resetSteen(long id) {
+		Dobbelsteen dobbelsteen = getDobbelsteenById(id);
+		dobbelsteen.resetWorp();
+		dobbelsteen.resetStatus();
+		return dobbelsteen;
+	}
 
     public void addDobbelstenen(Dobbelsteen dobbelsteen) {
         for (int i = 0; i < 8; i++) {
@@ -61,4 +71,22 @@ public class DobbelsteenService {
     public Integer getWorpById(long id) {
         return dobbelSteenRepository.findById(id).get().getWorp();
     }
+
+	public String getStatusById(long id) {
+		return dobbelSteenRepository.findById(id).get().getStatusSteen();
+	}
+
+	public Integer getCalculatedScore() {
+		Integer score = 0;
+		for (int i = 1; i <= 8 ; i++) {
+			Dobbelsteen dobbelsteen = getDobbelsteenById(i);
+			if (dobbelsteen.getStatusSteen().equals("vast")) {
+				score += dobbelsteen.getWorp();
+				}
+			}
+		return score;
+		}
+
+	
+		
 }

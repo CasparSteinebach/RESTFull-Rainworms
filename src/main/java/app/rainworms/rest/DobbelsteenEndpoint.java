@@ -35,6 +35,19 @@ public class DobbelsteenEndpoint {
         System.out.println("Worp opgevraagd");
         return dobbelsteenservice.getWorpById(id);
     }
+    
+    @CrossOrigin(origins = "http://localhost:8083")
+    @GetMapping("/checkstatus/{id}")
+    public String getStatusById(@PathVariable(value = "id") long id) {
+    	System.out.println("status opgevraagd");
+    	return dobbelsteenservice.getStatusById(id);
+    }
+    
+    @GetMapping("/getcalculatedscore")
+    public Integer getCalculatedScore() {
+    	//return 1;
+    	return dobbelsteenservice.getCalculatedScore();
+    }
 
     @CrossOrigin(origins = "http://localhost:8083")
     @PutMapping ("/changestatus/{id}")
@@ -46,4 +59,10 @@ public class DobbelsteenEndpoint {
     public Dobbelsteen getWorpDobbelsteen(@PathVariable (value="id")long id) {
         return dobbelsteenservice.setWorp(id);
     }
+    
+    @PutMapping("/resetsteen/{id}")
+    public Dobbelsteen resetWorpDobbelsteen(@PathVariable(value="id")long id) {
+    	return dobbelsteenservice.resetSteen(id);
+    }
+    
 }

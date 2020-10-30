@@ -2,20 +2,64 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+
+
 </head>
-<body>
+
+
+</html>
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Regenwormen</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styling.css">
+    <link rel="stylesheet" href="speelbord.css">
+    <script src="javascript.js"></script>
+
+</head>
+<body style="background-color: darkgreen" onload="dobbelstenenToevoegen(), generateTable(), scoreVasteStenen()">
+
+
 <div class="container">
-    <div class="dobbelsteen" id="dobbel1" onclick="dobbelsteenToevoegen('dobbel1'), veranderKlasse('dobbel1'); return false;"></div>
-    <div class="dobbelsteen" id="dobbel2" onclick="veranderKlasse('dobbel2'); return false;"></div>
-    <div class="dobbelsteen" id="dobbel3" onclick="veranderKlasse('dobbel3'); return false;"></div>
-    <div class="dobbelsteen" id="dobbel4" onclick="veranderKlasse('dobbel4'); return false;"></div>
+    <h1>Regenwormen</h1>
+</div>
+
+<div class="container" onload="scoreVasteStenen()">
+    <div id="scorebord"></div>
 </div>
 <div class="container">
-    <div class="dobbelsteen" id="dobbel5"  onclick="veranderKlasse('dobbel5'); return false;"></div>
-    <div class="dobbelsteen" id="dobbel6"  onclick="veranderKlasse('dobbel6'); return false;"></div>
-    <div class="dobbelsteen" id="dobbel7"  onclick="veranderKlasse('dobbel7'); return false;"></div>
-    <div class="dobbelsteen" id="dobbel8"  onclick="veranderKlasse('dobbel8'); return false;"></div>
+    <div class="container-bord">
+    <!-- <div class="dobbelsteen" id="1" onclick="veranderKlasse(1)"></div> -->
+    <div id="table"></div>
+    
+<div class="container-button">
+
+    <button class="button-klasse" onclick="stenenGooien(), stenenLaden(), scoreVasteStenen()">Gooi de dobbelsteen</button>
+    <button class="button-klasse" onclick="stenenResetten()">reset stenen en score</button>
 </div>
+</div>
+
+
+<div class="container">
+<!-- <button id="worp" value="4" onclick="dobbelsteenToevoegen('worp')">KLIK hier om een dobbelsteen toe te voegen</button>
+
+
+<button onclick="worpById(1)">klik voor worp getten</button>
+
+<button onclick="generateTable()">klik voor tabel</button>
+
+<button onclick="dobbelsteenStatusveranderen(1)">klik voor veranderen backend status</button>
+<button onclick="dobbelsteenWorpGooienbyId(1)">klik voor gooien backend worp </button>
+<button onclick="dobbelsteenToevoegen()">Klik om dobbelsteen te maken</button> -->
+
+</div>
+
 </body>
 </html>

@@ -11,7 +11,7 @@ public class Dobbelsteen implements Werpen{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long id;
+    private Long id;
     private String statusSteen;
     private int worp;
     private int dobbelPuntenScore;
@@ -59,5 +59,22 @@ public class Dobbelsteen implements Werpen{
     public void setDobbelPuntenScore(int dobbelPuntenScore) {
         this.dobbelPuntenScore = dobbelPuntenScore;
     }
+    
+    public void resetWorp() {
+    	this.worp = 0;
+    }
+    
+
+	/**
+	 * @return the id
+	 */
+	public Long getId() {
+		return id;
+	}
+
+	public void resetStatus() {
+		this.statusSteen = "open";	
+	}
+    
 }
 

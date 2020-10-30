@@ -18,27 +18,32 @@
 
     <title>Regenwormen</title>
 
-<!--    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>-->
-<!--    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>-->
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styling.css">
     <script src="javascript.js"></script>
-<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">-->
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
 
-    <![endif]-->
 </head>
-<body style="background-color: darkgreen" onload="dobbelsteenToevoegen()">
+<body style="background-color: darkgreen" onload="dobbelstenenToevoegen(), generateTable(), scoreVasteStenen()">
 
 
-<div class="container" onload="dobbelsteenToevoegen()">
+<div class="container">
     <h1>Regenwormen</h1>
-
 </div>
 
-<div id="hallo"></div>
+<div class="container" onload="scoreVasteStenen()">
+    <div id="scorebord"></div>
+</div>
+<div class="container">
+    <!-- <div class="dobbelsteen" id="1" onclick="veranderKlasse(1)"></div> -->
+    <div id="table"></div>
+<div class="container-button">
+
+    <button class="button-klasse" onclick="stenenGooien(), stenenLaden()">Gooi de dobbelsteen</button>
+</div>
+
+<button id="worp" value="4" onclick="dobbelsteenToevoegen('worp')">KLIK hier om een dobbelsteen toe te voegen</button>
+
+
 <button onclick="worpById(1)">klik voor worp getten</button>
 
 <div id="table"></div>
@@ -48,21 +53,6 @@
 <button onclick="dobbelsteenWorpGooienbyId(1)">klik voor gooien backend worp </button>
 <button onclick="dobbelsteenToevoegen()">Klik om dobbelsteen te maken</button>
 
-
-<div class="container">
-    <div class="dobbelsteen" id="1" onclick="dobbelNaLaden(1)"></div>
-<div class="container-button">
-
-    <button class="button-klasse" onclick="dobbelsteenId('dobbel1'), dobbelsteenId('dobbel2'), dobbelsteenId('dobbel3'), dobbelsteenId('dobbel4'), dobbelsteenId('dobbel5'), dobbelsteenId('dobbel6'), dobbelsteenId('dobbel7'), dobbelsteenId('dobbel8')">Gooi de dobbelsteen</button>
-</div>
-
-<button id="worp" value="4" onclick="dobbelsteenToevoegen('worp')">KLIK hier om een dobbelsteen toe te voegen</button>
-
-
-<!--&lt;!&ndash; jQuery (necessary for Bootstrap's JavaScript plugins) &ndash;&gt;-->
-<!--<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>-->
-<!--&lt;!&ndash; Include all compiled plugins (below), or include individual files as needed &ndash;&gt;-->
-<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>-->
 
 </body>
 </html>

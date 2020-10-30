@@ -1,0 +1,10 @@
+.container-bord {
+	max-width: 70%;
+	max-height: 80%;
+	margin: auto;
+	padding: 5%;
+	border-color: white;
+    border-width: 8px;
+    border-style: dashed;
+	border-radius: 30px;
+}
