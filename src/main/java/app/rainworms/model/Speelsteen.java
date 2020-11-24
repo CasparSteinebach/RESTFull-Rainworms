@@ -1,25 +1,66 @@
 package app.rainworms.model;
 
+import java.io.Serializable;
+
 import javax.persistence.*;
 
 @Entity
-public class Speelsteen {
-    @Id
+public class Speelsteen implements Serializable{
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -93655340851460245L;
+	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long id;
+    private Long id;
     private int waarde;
     private int aantalWormen;
+    private boolean bovenopStapel;
 //    @ManyToOne
 //    @JoinColumn(name="id", nullable=false)
 //    private Spel spel;
 
     public Speelsteen(){}
+    
+    
+
+   public Speelsteen(long id, int waarde, int aantalWormen, boolean bovenopStapel) {
+	super();
+	this.id = id;
+	this.waarde = waarde;
+	this.aantalWormen = aantalWormen;
+	this.bovenopStapel = bovenopStapel;
+}
+
+
 
 //    public Speelsteen(Spel spel){
 //        this.spel = spel;
 //    }
 
-    public Speelsteen(int waarde, int wormen){
+    /**
+	 * @return the id
+	 */
+	public Long getId() {
+		return id;
+	}
+
+	
+	/**
+	 * @return the bovenopStapel
+	 */
+	public boolean isBovenopStapel() {
+		return bovenopStapel;
+	}
+
+	/**
+	 * @param bovenopStapel the bovenopStapel to set
+	 */
+	public void setBovenopStapel(boolean bovenopStapel) {
+		this.bovenopStapel = bovenopStapel;
+	}
+
+	public Speelsteen(int waarde, int wormen){
         this.waarde = waarde;
         this.aantalWormen = wormen;
     }

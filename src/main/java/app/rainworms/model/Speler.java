@@ -9,9 +9,12 @@ import java.util.*;
 public class Speler extends Spel{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long id;
+    private Long id;
     private int punten;
     private String naam;
+    private ArrayList <Dobbelsteen> worpen;
+    private ArrayList <Speelsteen> stapelSpeler;
+    
 
 //    @OneToMany
 //    @JsonManagedReference
