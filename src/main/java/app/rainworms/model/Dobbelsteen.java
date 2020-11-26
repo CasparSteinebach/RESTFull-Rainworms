@@ -4,12 +4,18 @@ import app.rainworms.controller.DobbelsteenService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
+
+import java.io.Serializable;
 import java.util.Random;
 
 @Entity
-public class Dobbelsteen implements Werpen{
+public class Dobbelsteen implements Serializable, Werpen{
 
-    @Id
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -8507238232076802640L;
+	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String statusSteen;

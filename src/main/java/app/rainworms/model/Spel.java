@@ -50,7 +50,11 @@ public class Spel {
 			if (waarde <= 24) {
 				aantalWormen = 1;
 			} if (waarde >24 && waarde <= 28) {
-				aantalWormen= 2;
+				aantalWormen = 2;
+			} if (waarde >28 && waarde <= 32) {
+				aantalWormen = 3;
+			} if (waarde > 32) {
+				aantalWormen = 4;
 			}
 			
 			speelstenen[i] = new Speelsteen(id, waarde, aantalWormen, false);
@@ -71,6 +75,10 @@ public class Spel {
 	
 	public void setSpelers(ArrayList<Speler> spelers) {
 		this.spelers = spelers;
+	}
+	
+	public void addSpeler(Speler speler) {
+		spelers.add(speler);
 	}
 
 	

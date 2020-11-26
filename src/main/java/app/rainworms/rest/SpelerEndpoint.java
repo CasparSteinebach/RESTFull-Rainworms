@@ -5,6 +5,8 @@ import app.rainworms.controller.SpeelSteenService;
 import app.rainworms.controller.SpelerService;
 import app.rainworms.model.Dobbelsteen;
 import app.rainworms.model.Speelsteen;
+import app.rainworms.model.Speler;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,6 +24,11 @@ public class SpelerEndpoint {
     @GetMapping("/worp")
     public int getWorpDobbelsteen(){
         return dobbelsteenService.getWorp();
+    }
+    
+    @PostMapping("/add-speler")
+    public void addSpeler(@RequestBody Speler speler) {
+    	spelerService.addSpeler(speler);
     }
 
 //    public void addUrenFormulierToGebruiker(long gebruikerId, long urenformulierId) {

@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.*;
 
 @Entity
-public class Speler extends Spel{
+public class Speler{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
