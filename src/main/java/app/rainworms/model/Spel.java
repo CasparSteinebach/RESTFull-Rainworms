@@ -10,6 +10,7 @@ public class Spel {
     private Long id;
     @Column(length = 1000)
     private Speelsteen[] stapelStenenSpel;
+    @Column(length = 1000)
     private ArrayList<Speler> spelers;
     
     public Spel() {

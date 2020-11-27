@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Optional;
 import java.util.Set;
@@ -23,36 +24,29 @@ public class SpelService {
    @Autowired
    SpelerRepository spelerrepository;
    
-   public Spel setStapelStenen(long id) {
-	   
+   public Spel setStapelStenen(long id) {  
 	   	Spel spel = spelrepository.findById(id).get();
-	   	
-//	   	System.out.println(Arrays.toString(spel.getStapelStenenSpel()));
-//		
-//		Speelsteen[] speelstenen = spel.getStapelStenenSpel();
-//		
-//		speelstenen[1] = new Speelsteen();
 		spel.setStapelStenenSpel();
-		
 		return spel;
 	}
 
    public Spel addSpel(Spel spel) {
 	   System.out.println("Spel gemaakt");
 	   Speelsteen[] speelstenen = new Speelsteen[16];
+	   ArrayList<Speler> spelers = new ArrayList<>();
 	   System.out.println(Arrays.toString(speelstenen));
 	   spel.setStapelStenenSpel();
-	   System.out.println(Arrays.toString(speelstenen));
+	   spel.setSpelers(spelers);
 	   return spelrepository.save(spel);
 	}
+
+public Spel addSpelerToSpel(Long id, Long spelerid) {
+	Spel spel = spelrepository.findById(id).get();
+	Speler speler = spelerrepository.findById(spelerid).get();
+	spel.addSpeler(speler);
+	return spel;
+}
    
-   public Spel addspeler(Long id, Spel spel) {
-	   Optional<Speler> speler = spelerrepository.findById(id);
-	 
-	   
-	   
-	   return spelrepository.save(spel);
-   }
    
    
 }

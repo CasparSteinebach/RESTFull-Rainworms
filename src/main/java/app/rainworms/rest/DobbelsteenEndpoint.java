@@ -45,7 +45,6 @@ public class DobbelsteenEndpoint {
     
     @GetMapping("/getcalculatedscore")
     public Integer getCalculatedScore() {
-    	//return 1;
     	return dobbelsteenservice.getCalculatedScore();
     }
 

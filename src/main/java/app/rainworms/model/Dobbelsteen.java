@@ -71,7 +71,11 @@ public class Dobbelsteen implements Serializable, Werpen{
     }
     
 
-	/**
+	public void setId(long id) {
+		this.id = id;
+	}
+    
+    /**
 	 * @return the id
 	 */
 	public Long getId() {

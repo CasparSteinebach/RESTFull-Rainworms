@@ -37,4 +37,12 @@ public class SpelEndpoint {
     public Spel addSpeelbord(@PathVariable (value = "id")long id) {
         return spelservice.setStapelStenen(id);
     }
+	
+	
+	@CrossOrigin(origins = "http://localhost:8083")
+    @PutMapping ("/add-speler/{spelid}/{spelerid}")
+    public Spel addSpelerToSpel(@PathVariable (value = "spelid")Long id, @PathVariable (value = "spelerid")Long spelerid) {
+        return spelservice.addSpelerToSpel(id, spelerid);
+    }
+	
 }

@@ -16,20 +16,39 @@ import java.util.ArrayList;
 @RequestMapping("/api/speler")
 public class SpelerEndpoint {
     @Autowired
-    SpelerService spelerService;
+    SpelerService spelerservice;
 
     @Autowired
     DobbelsteenService dobbelsteenService;
 
-    @GetMapping("/worp")
-    public int getWorpDobbelsteen(){
-        return dobbelsteenService.getWorp();
-    }
     
     @PostMapping("/add-speler")
     public void addSpeler(@RequestBody Speler speler) {
-    	spelerService.addSpeler(speler);
+    	spelerservice.addSpeler(speler);
     }
+    
+    @GetMapping("/speler/{id}")
+    public Speler getSpelerById(@PathVariable(value = "id") long id) {
+        System.out.println("speler opgevraagd");
+        return spelerservice.getSpelerById(id);
+    }
+    
+    @GetMapping("get-dobbelsteen-speler-by-id/{spelerid}/{dobbelsteenid}")
+    public Dobbelsteen getDobbelsteenSpelerById(@PathVariable (value = "spelerid")Long spelerid, @PathVariable (value = "dobbelsteenid")Integer dobbelsteenid) {
+    	
+    	return spelerservice.getDobbelsteenFromSpelerById(spelerid, dobbelsteenid);
+    }
+    
+    @CrossOrigin(origins = "http://localhost:8083")
+    @PutMapping("/speler-dobbelstenen-pakken/{id}")
+    public Speler setDobbelstenenSpelerById(@PathVariable(value = "id") long id) {
+    	System.out.println("dobbelstenen geven aan speler");
+    	return spelerservice.chainDobbelstenenToSpeler(id);
+    }
+    
+    
+    
+    
 
 //    public void addUrenFormulierToGebruiker(long gebruikerId, long urenformulierId) {
 //        Gebruiker gebruiker = gebruikerRepository.findById(gebruikerId).get();
