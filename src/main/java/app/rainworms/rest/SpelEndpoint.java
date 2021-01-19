@@ -2,6 +2,7 @@ package app.rainworms.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -44,5 +45,10 @@ public class SpelEndpoint {
     public Spel addSpelerToSpel(@PathVariable (value = "spelid")Long id, @PathVariable (value = "spelerid")Long spelerid) {
         return spelservice.addSpelerToSpel(id, spelerid);
     }
+	
+	@GetMapping("/spel/{id}")
+	public Spel getSpel(@PathVariable (value = "id") Long id) {
+		return spelservice.getSpelById(id);
+	}
 	
 }

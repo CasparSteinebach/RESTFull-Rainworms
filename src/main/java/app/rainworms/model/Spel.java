@@ -4,14 +4,16 @@ import javax.persistence.*;
 import java.util.*;
 
 @Entity
+@Table(name="speelbord")
 public class Spel {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @Column(length = 1000)
     private Speelsteen[] stapelStenenSpel;
+    @OneToMany (mappedBy ="spel")
     @Column(length = 1000)
-    private ArrayList<Speler> spelers;
+    private List<Speler> spelers;
     
     public Spel() {
 	}
@@ -69,7 +71,7 @@ public class Spel {
 	}
 
 
-	public ArrayList<Speler> getSpelers() {
+	public List<Speler> getSpelers() {
 		return spelers;
 	}
 

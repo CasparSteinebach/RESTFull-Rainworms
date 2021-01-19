@@ -19,8 +19,6 @@ public class DobbelsteenService {
     public Dobbelsteen getDobbelsteenById(long id) {
         return dobbelSteenRepository.findById(id).get();
     }
-    
-    
 
     public Dobbelsteen addDobbelsteen(Dobbelsteen dobbelsteen) {
         System.out.println("add Dobbelsteen gemaakt");

@@ -11,14 +11,19 @@ import java.util.Optional;
 
 import javax.transaction.Transactional;
 
+
+
 @Service
 @Transactional
 public class SpelerService {
     @Autowired SpelerRepository spelerrepository;
     @Autowired DobbelSteenRepository dobbelsteenrepository;
     
+    static double percent;
+    
     public Speler addSpeler (Speler speler) {
         System.out.println("nieuwe speler toegevoegd");
+        
         return spelerrepository.save(speler);
     }
 
@@ -33,6 +38,7 @@ public class SpelerService {
 		for(int i = 0; i < dobbelstenen.length ; i++) {
 		dobbelstenen[i] = new Dobbelsteen();
 		dobbelstenen[i].setId(i);
+		dobbelstenen[i].setWorp();
 		}
 		speler.setDobbelstenen(dobbelstenen);
 		
@@ -50,6 +56,8 @@ public class SpelerService {
 		}
 		return speler.getDobbelstenen()[dobbelsteenid];
 	}
+	
+	
 
 	
     

@@ -22,11 +22,10 @@ public class Speler implements Serializable{
     private Dobbelsteen[] dobbelstenen;
     @Column (length = 1000)
 	private ArrayList <Speelsteen> stapelSpeler;
-    
+    @ManyToOne
+    @JsonManagedReference
+    private Spel spel;
 
-//    @OneToMany
-//    @JsonManagedReference
-//    private List<UrenFormulier> urenFormulier = new ArrayList<>();
 
     public Speler() {
     }

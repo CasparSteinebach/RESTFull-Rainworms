@@ -46,6 +46,11 @@ public Spel addSpelerToSpel(Long id, Long spelerid) {
 	spel.addSpeler(speler);
 	return spel;
 }
+
+public Spel getSpelById(long id) {
+	Spel spel = spelrepository.findById(id).get();
+	return spel;
+}
    
    
    
